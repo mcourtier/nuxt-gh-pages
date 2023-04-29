@@ -9,6 +9,14 @@ fi
 # Switch to the gh-pages branch
 git checkout gh-pages
 
+# Remove the dist folder if it exists
+if [ -d "dist" ]; then
+  rm -rf dist
+fi
+
+# Generate the dist folder
+npm run generate
+
 # Move into the dist folder
 cd dist
 
